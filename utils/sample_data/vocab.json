@@ -1,0 +1,62 @@
+{
+  "-NI4z249MjbI2a6Hjq2r":{
+    "firebaseKey":"-NI4z249MjbI2a6Hjq2r",
+    "first_name":"Archibold",
+    "last_name":"Moring",
+    "uid":"",
+    "vocabulary word":"Distutils",
+    "definition":"Package included in the Python Standard Library for installing, building and distributing Python code.",
+    "language":"Python",
+    "time":"12/2/2021"
+  },
+  "-NI4z24CK45jW2vuxdZx":{
+    "firebaseKey":"-NI4z24CK45jW2vuxdZx",
+    "first_name":"Linzy",
+    "last_name":"Ladson",
+    "uid":"",
+    "vocabulary word":"Garbage Collection",
+    "definition":"The process of freeing memory when it is not used anymore.",
+    "language":"Python",
+    "time":"4/9/2022"
+  },
+  "-NI4z24G6YKGiTLIxAUV":{
+    "firebaseKey":"-NI4z24G6YKGiTLIxAUV",
+    "first_name":"Elka",
+    "last_name":"Barensky",
+    "uid":"",
+    "vocabulary word":"Operator",
+    "definition":"Performs a function on one or more operands or variables. Operators are divided into two classes: binary and unary.",
+    "language":"JavaScript",
+    "time":"2/12/2022"
+  },
+  "-NI4z24JUCEPaQF-Dfu3":{
+    "firebaseKey":"-NI4z24JUCEPaQF-Dfu3",
+    "first_name":"Cecilia",
+    "last_name":"Villaron",
+    "uid":"",
+    "vocabulary word":"Exception Handling",
+    "definition":"Exception handling is an error-checker that automatically tries to resolve any mistakes while running the code. There are four keywords of exceptions you should become familiar with, namely try, catch, finally, and throw blocks. ",
+    "language":"C#",
+    "time":"7/20/2022"
+  },
+  "-NI4z24MzY8NxcerIEzh":{
+    "firebaseKey":"-NI4z24MzY8NxcerIEzh",
+    "first_name":"Fraze",
+    "last_name":"Bignal",
+    "uid":"",
+    "vocabulary word":"ACID",
+    "definition":"ACID stands for Atomicity, Consistency, Isolation, and Durability. They are the four attributes that ensure a database transaction is valid.",
+    "language":"SQL",
+    "time":"3/8/2022"
+  },
+  "-NI4z24QkNioqY5MejuO":{
+    "firebaseKey":"-NI4z24QkNioqY5MejuO",
+    "first_name":"Ruddy",
+    "last_name":"Powis",
+    "uid":"",
+    "vocabulary word":"BLOB",
+    "definition":"BLOB stands for Binary Large Object and is a data type. It’s used for storing digital information from other formats (e.g. images and audio) and can store data up to 4GB.",
+    "language":"SQL",
+    "time":"5/1/2022"
+  }
+}
