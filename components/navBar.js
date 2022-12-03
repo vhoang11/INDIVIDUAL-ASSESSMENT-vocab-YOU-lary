@@ -16,13 +16,13 @@ const navBar = () => {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" id="word-day">Word of the Day</a>
+              <a class="nav-link" href="#" id="starred">Starred Vocab</a>
             </li>
             <li>
             <input
               class="form-control mr-sm-2"
               id="search"
-              placeholder="Search Book Titles"
+              placeholder="Search Vocab"
               aria-label="Search"
             />
             </li>
