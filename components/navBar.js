@@ -4,6 +4,7 @@ const navBar = () => {
   const domString = `
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-secondary mb-5" id="navbar-color">
     <div class="container-fluid">
+      <img src="https://st2.depositphotos.com/7752738/11936/v/450/depositphotos_119369736-stock-illustration-learn-abc-letters-vector-icon.jpg" class="icon"
         <a class="navbar-brand title" href="#">Vocabulary Wiz</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

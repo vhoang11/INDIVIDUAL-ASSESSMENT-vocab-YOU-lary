@@ -9,8 +9,9 @@ body {
   margin-top: 100px;
 }
 
-.navbar-color {
-  background-color: #ebb4ff;
+.icon {
+  width: 50px;
+  padding-right: 8px;
 }
 
 h5 {
@@ -31,6 +32,10 @@ h5 {
     text-align: center;
   }
 
+  p {
+    color: darkgray;
+  }
+  
   #navigation {
     background-color: #ebb4ff;
   }
@@ -47,7 +52,7 @@ h5 {
     width: 60%;
     margin: auto;
     justify-content: center;
-    color: white;
+    color: darkgray;
 
     #formModal {
       color: #ebb4ff;

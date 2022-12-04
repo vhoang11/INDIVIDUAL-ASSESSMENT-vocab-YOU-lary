@@ -6,13 +6,12 @@ import { showVocab } from '../../pages/vocab';
 const formEvents = () => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
-    // TODO: CLICK EVENT FOR SUBMITTING FORM FOR ADDING A BOOK
+    // TODO: CLICK EVENT FOR SUBMITTING FORM FOR ADDING A VOCAB
     if (e.target.id.includes('submit-book')) {
       const payload = {
         vocabulary_word: document.querySelector('#title').value,
         definition: document.querySelector('#description').value,
-        language_id: document.querySelector('#author_id').value,
-        favorite: document.querySelector('#sale').checked,
+        favorite: document.querySelector('#favorite').checked,
         // uid: user.uid,
       };
 
@@ -32,8 +31,7 @@ const formEvents = () => {
       const payload = {
         vocabulary_word: document.querySelector('#title').value,
         definition: document.querySelector('#description').value,
-        language_id: document.querySelector('#author_id').value,
-        favorite: document.querySelector('#sale').checked,
+        favorite: document.querySelector('#favorite').checked,
         firebaseKey,
       };
 
@@ -42,11 +40,11 @@ const formEvents = () => {
       });
     }
 
+    // TODO: CLICK EVENT FOR EDITING A LANGUAGE
     if (e.target.id.includes('submit-author')) {
       const languagePayload = {
-        email: document.querySelector('#email').value,
-        first_name: document.querySelector('#first_name').value,
-        last_name: document.querySelector('#last_name').value,
+        language: document.querySelector('#first_name').value,
+        description: document.querySelector('#description').value,
         favorite: document.querySelector('#favorite').checked,
         // uid: user.uid,
       };
@@ -60,14 +58,13 @@ const formEvents = () => {
       });
     }
 
-    // FIXME:ADD CLICK EVENT FOR EDITING AN AUTHOR
+    // FIXME:ADD CLICK EVENT FOR EDITING A LANGUAGE
     if (e.target.id.includes('update-author')) {
       const [, firebaseKey] = e.target.id.split('--');
 
       const languagePayload = {
-        email: document.querySelector('#email').value,
-        first_name: document.querySelector('#first_name').value,
-        last_name: document.querySelector('#last_name').value,
+        language: document.querySelector('#first_name').value,
+        description: document.querySelector('#description').value,
         favorite: document.querySelector('#favorite').checked,
         firebaseKey,
       };

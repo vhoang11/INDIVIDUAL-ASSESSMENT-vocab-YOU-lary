@@ -8,7 +8,7 @@ import {
 } from '../../api/languageData';
 import { showLanguages } from '../../pages/language';
 import addLanguageForm from '../forms/addLanguageForm';
-import viewLanguageVocab from '../forms/viewLanguageVocab';
+import viewLanguageVocab from '../../pages/viewLanguageVocab';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
