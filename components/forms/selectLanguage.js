@@ -4,7 +4,7 @@ import renderToDOM from '../../utils/renderToDom';
 const selectLanguage = (languageId, user) => {
   let domString = `<label for="author">Select a Language</label>
     <select class="form-control" id="author_id" required>
-    <option value="">Select an Author</option>`;
+    <option value="">Select a Language</option>`;
 
   getLanguage(user).then((languageArray) => {
     languageArray.forEach((language) => {
@@ -12,13 +12,13 @@ const selectLanguage = (languageId, user) => {
           <option 
             value="${language.firebaseKey}" 
             ${languageId === language.firebaseKey ? 'selected' : ''}>
-              ${language.first_name} ${language.last_name}
+              ${language.language}
           </option>`;
     });
 
     domString += '</select>';
 
-    renderToDOM('#select-author', domString);
+    renderToDOM('#select-language', domString);
   });
 };
 

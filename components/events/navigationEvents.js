@@ -30,7 +30,7 @@ const navigationEvents = () => {
   // 1. When clicks the authors link, make a call to firebase to get all authors
   // 2. Convert the response to an array because that is what the makeAuthors function is expecting
   // 3. If the array is empty because there are no authors, make sure to use the emptyAuthor function
-  document.querySelector('#authors').addEventListener('click', () => {
+  document.querySelector('#languages').addEventListener('click', () => {
     getLanguage().then((languageArray) => {
       if (languageArray.length) {
         showLanguages(languageArray);
@@ -40,7 +40,7 @@ const navigationEvents = () => {
     });
   });
   // FAVORITE LANGUAGES
-  document.querySelector('#favorite-authors').addEventListener('click', () => {
+  document.querySelector('#fav-languages').addEventListener('click', () => {
     getFavoriteLanguage().then(showLanguages);
   });
 

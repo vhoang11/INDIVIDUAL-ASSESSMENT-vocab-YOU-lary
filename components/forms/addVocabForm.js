@@ -13,7 +13,7 @@ const addVocabForm = (obj = {}) => {
       </div>
       <div class="form-group">
         <label for="description">Description</label>
-        <textarea class="form-control" placeholder="Vocab Description" id="description" style="height: 100px">${obj.description || ''}</textarea>
+        <textarea class="form-control" placeholder="Vocab Definition" id="description" style="height: 100px">${obj.description || ''}</textarea>
       </div>
       <div class="form-group" id="select-language">
       </div>

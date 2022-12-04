@@ -22,7 +22,7 @@ const getVocab = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: DELETE BOOK
+// TODO: DELETE VOCAB
 const deleteVocab = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/vocab/${firebaseKey}.json`, {
     method: 'DELETE',
@@ -77,7 +77,7 @@ const updateVocab = (payload) => new Promise((resolve, reject) => {
 });
 
 const getVocabByLanguage = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocab.json?orderBy="author_id"&equalTo="${firebaseKey}"`, {
+  fetch(`${endpoint}/vocab.json?orderBy="language_id"&equalTo="${firebaseKey}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -88,9 +88,9 @@ const getVocabByLanguage = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: FILTER BOOKS ON SALE
-const favoriteVocab = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocab.json?orderBy="uid"&equalTo="${uid}"`, {
+// TODO: FILTER VOCAB BY FAVORITES
+const favoriteVocab = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="favorite"&equalTo=true`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

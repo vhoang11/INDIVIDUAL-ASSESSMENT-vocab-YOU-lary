@@ -3,8 +3,93 @@
 
 
 body {
-  background-color: darkgray ;
-  color: brown;
+  background-color: #fdfbf8ff;
+  color: darkgray;
   text-align: center;
   margin-top: 100px;
+}
+
+.navbar-color {
+  background-color: #ebb4ff;
+}
+
+h5 {
+  font-size: large;
+  font-weight: bold;
+  color: #414a4c;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 100px;
+  align-content: center;
+
+  #add-button {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #navigation {
+    background-color: #ebb4ff;
+  }
+
+  .btn-success, .btn-primary {
+    background-color: #ebb4ff;
+  }
+
+  .btn-danger {
+    background-color: darkgrey;
+  }
+
+  #form-container {
+    width: 60%;
+    margin: auto;
+    justify-content: center;
+    color: white;
+
+    #formModal {
+      color: #ebb4ff;
+    }
+  }
+
+  #store {
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+
+    .card {
+      width: 300px;
+      margin: 5px;
+
+      .sale-badge {
+        font-size: 1em;
+        background-color: #ebb4ff;
+      }
+    }
+
+    .table {
+      margin: 10px;
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+}
+
+#view {
+  width: 60%;
+  margin: auto;
+
+  .details {
+    min-width: 50%;
+    max-width: 60%;
+  }
+
+  .description {
+    white-space: pre-wrap;
+  }
 }

@@ -2,8 +2,8 @@ import client from '../utils/client';
 
 const endpoint = client.databaseURL;
 
-const getLanguage = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/language.json?orderBy="uid"&equalTo="${uid}"`, {
+const getLanguage = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/language.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -20,22 +20,19 @@ const getLanguage = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getFavoriteLanguage = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/language.json?orderBy="uid"&equalTo="${uid}"`, {
+const getFavoriteLanguage = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/language.json?orderBy="favorite"&equalTo=true`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => {
-      const myFave = Object.values(data).filter((item) => item.favorite);
-      resolve(myFave);
-    })
+    .then((data) => resolve(Object.values(data)))
     .catch(reject);
 });
 
-// FIXME: CREATE AUTHOR
+// FIXME: CREATE LANGUAGE
 const createLanguage = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/language.json`, {
     method: 'POST',
@@ -49,7 +46,7 @@ const createLanguage = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// FIXME: GET SINGLE AUTHOR
+// FIXME: GET SINGLE LANGUAGE
 const getSingleLanguage = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/language/${firebaseKey}.json`, {
     method: 'GET',
@@ -62,7 +59,7 @@ const getSingleLanguage = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// FIXME: DELETE AUTHOR
+// FIXME: DELETE LANGUAGE
 const deleteSingleLanguage = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/language/${firebaseKey}.json`, {
     method: 'DELETE',
@@ -75,7 +72,7 @@ const deleteSingleLanguage = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// FIXME: UPDATE AUTHOR
+// FIXME: UPDATE LANGUAGE
 const updateLanguage = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/language/${payload.firebaseKey}.json`, {
     method: 'PATCH',
@@ -89,7 +86,7 @@ const updateLanguage = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: GET A SINGLE AUTHOR'S BOOKS
+// TODO: GET A SINGLE LANGUAGES VOCAB
 const getLanguageVocab = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/vocab.json?orderBy="language_id"&equalTo="${firebaseKey}"`, {
     method: 'GET',
