@@ -10,7 +10,7 @@ import { showLanguages } from '../../pages/language';
 import addLanguageForm from '../forms/addLanguageForm';
 import viewLanguageVocab from '../../pages/viewLanguageVocab';
 
-const domEvents = () => {
+const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     // TODO: CLICK EVENT FOR DELETING A VOCAB
     if (e.target.id.includes('delete-book')) {
@@ -19,21 +19,21 @@ const domEvents = () => {
         const [, firebaseKey] = (e.target.id.split('--'));
 
         deleteVocab(firebaseKey).then(() => {
-          getVocab().then(showVocab);
+          getVocab(user.uid).then(showVocab);
         });
       }
     }
 
     // TODO: CLICK EVENT FOR SHOWING FORM FOR ADDING A VOCAB
     if (e.target.id.includes('add-book-btn')) {
-      addVocabForm({});
+      addVocabForm({}, user.uid);
     }
 
     // TODO: CLICK EVENT EDITING/UPDATING A VOCAB
     if (e.target.id.includes('edit-book-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
 
-      getSingleVocab(firebaseKey).then(() => addVocabForm({}));
+      getSingleVocab(firebaseKey).then(() => addVocabForm({}, user));
     }
     // TODO: CLICK EVENT FOR VIEW VOCAB DETAILS
     if (e.target.id.includes('view-book-btn')) {
@@ -49,7 +49,7 @@ const domEvents = () => {
         const [, firebaseKey] = (e.target.id.split('--'));
 
         deleteSingleLanguage(firebaseKey).then(() => {
-          getLanguage().then(showLanguages);
+          getLanguage(user.uid).then(showLanguages);
         });
       }
     }
@@ -79,7 +79,7 @@ const domEvents = () => {
         const [, firebaseKey] = e.target.id.split('--');
 
         deleteLanguageVocabRelationship(firebaseKey).then(() => {
-          getLanguage().then(showLanguages);
+          getLanguage(user.uid).then(showLanguages);
         });
       }
     }

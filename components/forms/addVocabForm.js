@@ -3,7 +3,7 @@ import renderToDOM from '../../utils/renderToDom';
 import selectLanguage from './selectLanguage';
 
 // USING THIS FORM FOR BOTH CREATE AND UPDATE
-const addVocabForm = (obj = {}) => {
+const addVocabForm = (obj = {}, user) => {
   clearDom();
   const domString = `
     <form id="${obj.firebaseKey ? `update-book--${obj.firebaseKey}` : 'submit-book'}" class="mb-4">
@@ -42,7 +42,7 @@ const addVocabForm = (obj = {}) => {
     </form>`;
 
   renderToDOM('#form-container', domString);
-  selectLanguage(`${obj.language_id || ''}`);
+  selectLanguage(`${obj.language_id || ''}`, user);
 };
 
 export default addVocabForm;

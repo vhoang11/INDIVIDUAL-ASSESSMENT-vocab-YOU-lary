@@ -2,8 +2,8 @@ import client from '../utils/client';
 
 const endpoint = client.databaseURL;
 
-const getLanguage = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/language.json`, {
+const getLanguage = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/language.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -20,15 +20,18 @@ const getLanguage = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getFavoriteLanguage = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/language.json?orderBy="favorite"&equalTo=true`, {
+const getFavoriteLanguage = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/language.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
+    .then((data) => {
+      const myFave = Object.values(data).filter((item) => item.favorite);
+      resolve(myFave);
+    })
     .catch(reject);
 });
 

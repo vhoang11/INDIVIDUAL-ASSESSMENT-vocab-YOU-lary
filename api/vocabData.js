@@ -4,8 +4,8 @@ import client from '../utils/client';
 const endpoint = client.databaseURL;
 
 // TODO: GET VOCAB
-const getVocab = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocab.json`, {
+const getVocab = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -89,15 +89,18 @@ const getVocabByLanguage = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 // TODO: FILTER VOCAB BY FAVORITES
-const favoriteVocab = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocab.json?orderBy="favorite"&equalTo=true`, {
+const favoriteVocab = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
+    .then((data) => {
+      const myFaveVocab = Object.values(data).filter((item) => item.favorite);
+      resolve(myFaveVocab);
+    })
     .catch(reject);
 });
 

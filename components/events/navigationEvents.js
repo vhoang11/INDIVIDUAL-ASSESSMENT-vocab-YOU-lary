@@ -5,19 +5,19 @@ import { emptyVocab, showVocab } from '../../pages/vocab';
 import { signOut } from '../../utils/auth';
 
 // navigation events
-const navigationEvents = () => {
+const navigationEvents = (user) => {
   // LOGOUT BUTTON
   document.querySelector('#logout-button')
     .addEventListener('click', signOut);
 
   // TODO: FAVORITE VOCAB
   document.querySelector('#starred').addEventListener('click', () => {
-    favoriteVocab().then(showVocab);
+    favoriteVocab(user.uid).then(showVocab);
   });
 
   // TODO: ALL VOCAB
   document.querySelector('#all-vocab').addEventListener('click', () => {
-    getVocab().then((vocabArray) => {
+    getVocab(user.uid).then((vocabArray) => {
       if (vocabArray.length) {
         showVocab(vocabArray);
       } else {
@@ -31,7 +31,7 @@ const navigationEvents = () => {
   // 2. Convert the response to an array because that is what the makeAuthors function is expecting
   // 3. If the array is empty because there are no authors, make sure to use the emptyAuthor function
   document.querySelector('#languages').addEventListener('click', () => {
-    getLanguage().then((languageArray) => {
+    getLanguage(user.uid).then((languageArray) => {
       if (languageArray.length) {
         showLanguages(languageArray);
       } else {
@@ -41,7 +41,7 @@ const navigationEvents = () => {
   });
   // FAVORITE LANGUAGES
   document.querySelector('#fav-languages').addEventListener('click', () => {
-    getFavoriteLanguage().then(showLanguages);
+    getFavoriteLanguage(user.uid).then(showLanguages);
   });
 
   // STRETCH: SEARCH

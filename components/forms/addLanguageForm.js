@@ -14,7 +14,7 @@ const addLanguageForm = (obj = {}) => {
       <textarea class="form-control" placeholder="Description" id="description" style="height: 100px">${obj.description || ''}</textarea>
       </div>
       <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="favorite" ${obj.favorite ? 'checked' : ''}>
+      <input type="checkbox" class="form-check-input" id="favoriteLanguage" ${obj.favorite ? 'checked' : ''}>
       <label class="form-check-label" for="favorite">Favorite?</label>
       </div>
       <button type="submit" class="btn btn-primary mt-3">Submit Language</button>

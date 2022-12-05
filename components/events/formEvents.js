@@ -3,7 +3,7 @@ import { createVocab, getVocab, updateVocab } from '../../api/vocabData';
 import { showLanguages } from '../../pages/language';
 import { showVocab } from '../../pages/vocab';
 
-const formEvents = () => {
+const formEvents = (user) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
     // TODO: CLICK EVENT FOR SUBMITTING FORM FOR ADDING A VOCAB
@@ -17,14 +17,14 @@ const formEvents = () => {
         language_id: document.querySelector('#author_id').value,
         favorite: document.querySelector('#favorite').checked,
         date: document.querySelector('#date').value,
-        // uid: user.uid,
+        uid: user.uid,
       };
 
       createVocab(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
 
         updateVocab(patchPayload).then(() => {
-          getVocab().then(showVocab);
+          getVocab(user.uid).then(showVocab);
         });
       });
     }
@@ -46,7 +46,7 @@ const formEvents = () => {
       };
 
       updateVocab(payload).then(() => {
-        getVocab().then(showVocab);
+        getVocab(user).then(showVocab);
       });
     }
 
@@ -55,15 +55,15 @@ const formEvents = () => {
       const languagePayload = {
         language: document.querySelector('#first_name').value,
         description: document.querySelector('#description').value,
-        favorite: document.querySelector('#favorite').checked,
-        // uid: user.uid,
+        favorite: document.querySelector('#favoriteLanguage').checked,
+        uid: user.uid,
       };
 
       createLanguage(languagePayload).then(({ name }) => {
         const patchLanguagePayload = { firebaseKey: name };
 
         updateLanguage(patchLanguagePayload).then(() => {
-          getLanguage().then(showLanguages);
+          getLanguage(user.uid).then(showLanguages);
         });
       });
     }
@@ -75,12 +75,12 @@ const formEvents = () => {
       const languagePayload = {
         language: document.querySelector('#first_name').value,
         description: document.querySelector('#description').value,
-        favorite: document.querySelector('#favorite').checked,
+        favorite: document.querySelector('#favoriteLanguage').checked,
         firebaseKey,
       };
 
       updateLanguage(languagePayload).then(() => {
-        getLanguage().then(showLanguages);
+        getLanguage(user).then(showLanguages);
       });
     }
   });
