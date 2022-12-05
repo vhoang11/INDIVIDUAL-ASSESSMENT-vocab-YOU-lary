@@ -5,7 +5,7 @@ const viewLanguageVocab = (obj) => {
   clearDom();
 
   let domString = `
-  <div class="mt-5 d-flex flex-wrap">
+  <div class="mt-5">
   <div class="d-flex flex-column">
    <h1> ${obj.language} ${obj.favorite ? '<span class="badge bg-danger"><i class="fa fa-heart" aria-hidden="true"></i></span>' : ''}</h1>
   </div>;`;

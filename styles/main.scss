@@ -3,7 +3,7 @@
 
 
 body {
-  background-color: #fdfbf8ff;
+  background-color: #ebebeb;
   color: darkgray;
   text-align: center;
   margin-top: 100px;
@@ -18,6 +18,18 @@ h5 {
   font-size: large;
   font-weight: bold;
   color: #414a4c;
+}
+
+#welcome {
+  align-content: center;
+  color: #699b72;
+  font-size: 60px;
+}
+
+#google-auth {
+  margin-top: 10px;
+  margin-bottom: auto;
+  background-color: #ebb4ff;
 }
 
 #main-container {

@@ -9,10 +9,11 @@ const formEvents = () => {
     // TODO: CLICK EVENT FOR SUBMITTING FORM FOR ADDING A VOCAB
     if (e.target.id.includes('submit-book')) {
       const payload = {
-        vocabulary_word: document.querySelector('#title').value,
         first_name: document.querySelector('#vocab-first_name').value,
         last_name: document.querySelector('#vocab-last_name').value,
+        vocabulary_word: document.querySelector('#title').value,
         definition: document.querySelector('#description').value,
+        language: document.querySelector('#language').value,
         language_id: document.querySelector('#author_id').value,
         favorite: document.querySelector('#favorite').checked,
         date: document.querySelector('#date').value,
@@ -33,10 +34,11 @@ const formEvents = () => {
       const [, firebaseKey] = e.target.id.split('--');
 
       const payload = {
-        vocabulary_word: document.querySelector('#title').value,
         first_name: document.querySelector('#vocab-first_name').value,
         last_name: document.querySelector('#vocab-last_name').value,
+        vocabulary_word: document.querySelector('#title').value,
         definition: document.querySelector('#description').value,
+        language: document.querySelector('#language').value,
         language_id: document.querySelector('#author_id').value,
         favorite: document.querySelector('#favorite').checked,
         date: document.querySelector('#date').value,
