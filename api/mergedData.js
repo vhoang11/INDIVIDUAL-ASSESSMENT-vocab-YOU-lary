@@ -11,7 +11,7 @@ const getVocabDetails = (firebaseKey) => new Promise((resolve, reject) => {
 
 const getLanguageVocab = async (firebaseKey) => {
   const language = await getSingleLanguage(firebaseKey);
-  const vocabArray = await getLanguageVocab(language.firebaseKey);
+  const vocabArray = await getVocabByLanguage(language.firebaseKey);
 
   return { ...language, vocabArray };
 };

@@ -1,10 +1,10 @@
 import { deleteVocab, getSingleVocab, getVocab } from '../../api/vocabData';
 import { showVocab } from '../../pages/vocab';
 import addVocabForm from '../forms/addVocabForm';
-import { getVocabDetails, deleteLanguageVocabRelationship } from '../../api/mergedData';
+import { getVocabDetails, getLanguageVocab, deleteLanguageVocabRelationship } from '../../api/mergedData';
 import viewVocab from '../../pages/viewVocab';
 import {
-  deleteSingleLanguage, getLanguage, getLanguageVocab, getSingleLanguage
+  deleteSingleLanguage, getLanguage, getSingleLanguage
 } from '../../api/languageData';
 import { showLanguages } from '../../pages/language';
 import addLanguageForm from '../forms/addLanguageForm';
@@ -70,12 +70,6 @@ const domEvents = () => {
       const [, firebaseKey] = e.target.id.split('--');
 
       getLanguageVocab(firebaseKey).then(viewLanguageVocab);
-    }
-
-    // CLICK EVENT FOR EDITING A LANGUAGE
-    if (e.target.id.includes('update-author')) {
-      const [, firebaseKey] = e.target.id.split('--');
-      getSingleLanguage(firebaseKey).then((languageObj) => addLanguageForm(languageObj));
     }
 
     // CLICK EVENT FOR DELETING A LANGUAGE / VOCAB

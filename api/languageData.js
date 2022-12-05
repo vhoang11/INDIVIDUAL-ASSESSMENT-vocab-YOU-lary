@@ -73,13 +73,13 @@ const deleteSingleLanguage = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 // FIXME: UPDATE LANGUAGE
-const updateLanguage = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/language/${payload.firebaseKey}.json`, {
+const updateLanguage = (languagePayload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/language/${languagePayload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(payload),
+    body: JSON.stringify(languagePayload),
   })
     .then((response) => response.json())
     .then(resolve)
@@ -87,7 +87,7 @@ const updateLanguage = (payload) => new Promise((resolve, reject) => {
 });
 
 // TODO: GET A SINGLE LANGUAGES VOCAB
-const getLanguageVocab = (firebaseKey) => new Promise((resolve, reject) => {
+const getLanguagesVocab = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/vocab.json?orderBy="language_id"&equalTo="${firebaseKey}"`, {
     method: 'GET',
     headers: {
@@ -106,5 +106,5 @@ export {
   deleteSingleLanguage,
   updateLanguage,
   getFavoriteLanguage,
-  getLanguageVocab
+  getLanguagesVocab
 };

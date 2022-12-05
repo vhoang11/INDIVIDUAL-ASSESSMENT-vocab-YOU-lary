@@ -10,8 +10,12 @@ const formEvents = () => {
     if (e.target.id.includes('submit-book')) {
       const payload = {
         vocabulary_word: document.querySelector('#title').value,
+        first_name: document.querySelector('#vocab-first_name').value,
+        last_name: document.querySelector('#vocab-last_name').value,
         definition: document.querySelector('#description').value,
+        language_id: document.querySelector('#author_id').value,
         favorite: document.querySelector('#favorite').checked,
+        date: document.querySelector('#date').value,
         // uid: user.uid,
       };
 
@@ -30,8 +34,12 @@ const formEvents = () => {
 
       const payload = {
         vocabulary_word: document.querySelector('#title').value,
+        first_name: document.querySelector('#vocab-first_name').value,
+        last_name: document.querySelector('#vocab-last_name').value,
         definition: document.querySelector('#description').value,
+        language_id: document.querySelector('#author_id').value,
         favorite: document.querySelector('#favorite').checked,
+        date: document.querySelector('#date').value,
         firebaseKey,
       };
 
@@ -40,7 +48,7 @@ const formEvents = () => {
       });
     }
 
-    // TODO: CLICK EVENT FOR EDITING A LANGUAGE
+    // TODO: CLICK EVENT FOR SUBMITTING A LANGUAGE
     if (e.target.id.includes('submit-author')) {
       const languagePayload = {
         language: document.querySelector('#first_name').value,

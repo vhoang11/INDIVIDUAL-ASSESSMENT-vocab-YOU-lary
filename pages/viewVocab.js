@@ -17,7 +17,7 @@ const viewVocab = (obj) => {
      <p>${obj.definition}</p>
      <hr>
      <p>${obj.favorite ? `<span class="badge bg-info sale-badge"><i class="fa fa-bell" aria-hidden="true"></i>Favorite</span> 
-       ${obj.price}` : `${obj.price}`}</p>      
+       ${obj.date}` : `${obj.date}`}</p>      
       </div>
     </div>`;
 

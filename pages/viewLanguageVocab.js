@@ -16,7 +16,7 @@ const viewLanguageVocab = (obj) => {
       <p>${item.definition || ''}</p>
       <hr>
       <p>${item.favorite ? `<span class="badge bg-info sale-badge"><i class="fa fa-bell" aria-hidden="true"></i>Favorite</span>
-        $${item.price}` : `$${item.price}`}</p>
+        ${item.date}` : `${item.date}`}</p>
        </div>
        </div>`;
     return renderToDOM('#view', domString);

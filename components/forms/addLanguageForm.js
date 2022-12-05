@@ -6,8 +6,8 @@ const addLanguageForm = (obj = {}) => {
   const domString = `
     <form id="submit-author ${obj.firebaseKey ? `update-author--${obj.firebaseKey}` : 'submit-author'}" class="mb-4">
       <div class="form-group">
-        <label for="image">First Name</label>
-        <input type="text" class="form-control" id="first_name" placeholder="Language" value="${obj.langauge || ''}" required>
+        <label for="image">Language</label>
+        <input type="text" class="form-control" id="first_name" placeholder="Language" value="${obj.language || ''}" required>
       </div>
       <div class="form-group">
       <label for="description">Description</label>

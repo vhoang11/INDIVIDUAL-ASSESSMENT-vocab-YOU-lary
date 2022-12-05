@@ -8,7 +8,7 @@
     "language_id":"-NIKqWbmTUxM00t03ROR",
     "favorite": false, 
     "uid":"",
-    "time":"12/2/2021"
+    "date":"2022-12-04"
   },
   "-NI4z24CK45jW2vuxdZx":{
     "firebaseKey":"-NI4z24CK45jW2vuxdZx",
@@ -19,7 +19,7 @@
     "language_id":"-NIKqWbmTUxM00t03ROR",
     "favorite": true, 
     "uid":"",
-    "time":"4/9/2022"
+    "date":"2022-12-01"
   },
   "-NI4z24G6YKGiTLIxAUV":{
     "firebaseKey":"-NI4z24G6YKGiTLIxAUV",
@@ -30,7 +30,7 @@
     "language_id":"-NIKqWbo6wrj0VMXWnnD",
     "favorite": false,
     "uid":"",
-    "time":"2/12/2022"
+    "date":"2022-12-01"
   },
   "-NI4z24JUCEPaQF-Dfu3":{
     "firebaseKey":"-NI4z24JUCEPaQF-Dfu3",
@@ -41,7 +41,7 @@
     "language_id":"-NIKqWbn3hw5a5jDiAUL",
     "favorite": false,
     "uid":"",
-    "time":"7/20/2022"
+    "date":"2022-12-02"
   },
   "-NI4z24MzY8NxcerIEzh":{
     "firebaseKey":"-NI4z24MzY8NxcerIEzh",
@@ -52,7 +52,7 @@
     "language_id":"-NIKqWbp5Riw3jLpSDLY",
     "favorite": true, 
     "uid":"",
-    "time":"3/8/2022"
+    "date":"2022-12-03"
   },
   "-NI4z24QkNioqY5MejuO":{
     "firebaseKey":"-NI4z24QkNioqY5MejuO",
@@ -63,6 +63,6 @@
     "language_id":"-NIKqWbp5Riw3jLpSDLY",
     "favorite": false,
     "uid":"",
-    "time":"5/1/2022"
+    "date":"2022-12-03"
   }
 }
