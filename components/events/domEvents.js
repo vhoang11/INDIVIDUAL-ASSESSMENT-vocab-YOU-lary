@@ -33,7 +33,7 @@ const domEvents = (user) => {
     if (e.target.id.includes('edit-book-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
 
-      getSingleVocab(firebaseKey).then(() => addVocabForm({}, user));
+      getSingleVocab(firebaseKey).then((obj) => addVocabForm(obj, user));
     }
     // TODO: CLICK EVENT FOR VIEW VOCAB DETAILS
     if (e.target.id.includes('view-book-btn')) {

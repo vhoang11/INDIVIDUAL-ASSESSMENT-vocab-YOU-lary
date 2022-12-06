@@ -1,4 +1,4 @@
-import { createLanguage, getLanguage, updateLanguage } from '../../api/languageData';
+import { getLanguage, updateLanguage, createLanguage } from '../../api/languageData';
 import { createVocab, getVocab, updateVocab } from '../../api/vocabData';
 import { showLanguages } from '../../pages/language';
 import { showVocab } from '../../pages/vocab';
@@ -69,18 +69,18 @@ const formEvents = (user) => {
     }
 
     // FIXME:ADD CLICK EVENT FOR EDITING A LANGUAGE
-    if (e.target.id.includes('update-author')) {
+    if (e.target.id.includes('update-language')) {
       const [, firebaseKey] = e.target.id.split('--');
-
       const languagePayload = {
         language: document.querySelector('#first_name').value,
         description: document.querySelector('#description').value,
         favorite: document.querySelector('#favoriteLanguage').checked,
+        uid: user.uid,
         firebaseKey,
       };
 
       updateLanguage(languagePayload).then(() => {
-        getLanguage(user).then(showLanguages);
+        getLanguage(user.uid).then(showLanguages);
       });
     }
   });
