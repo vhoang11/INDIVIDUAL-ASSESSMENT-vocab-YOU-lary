@@ -42,11 +42,12 @@ const formEvents = (user) => {
         language_id: document.querySelector('#author_id').value,
         favorite: document.querySelector('#favorite').checked,
         date: document.querySelector('#date').value,
+        uid: user.uid,
         firebaseKey,
       };
 
       updateVocab(payload).then(() => {
-        getVocab(user).then(showVocab);
+        getVocab(user.uid).then(showVocab);
       });
     }
 
